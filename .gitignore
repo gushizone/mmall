@@ -1,0 +1,36 @@
+# 由于基于maven，git可忽略所有字节码文件和jar包等
+
+*.class
+
+# package file
+*.war
+*.ear
+
+# kdiff3 ignore
+*.orig
+
+# maven ignore
+target/
+
+# idea
+.idea/
+/idea/
+*.ipr
+*.iml
+*.iws
+
+# eclipse ignore
+.settings/
+.project
+.classpatch
+
+# temp file
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
