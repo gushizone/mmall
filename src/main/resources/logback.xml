@@ -12,10 +12,11 @@
     </appender>
 
     <appender name="mmall" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <!--<File>d:/mmalllog/mmall.log</File>-->
-        <File>/developer/apache-tomcat-7.0.73/logs/mmall.log</File>
+        <File>c:/fileRepo/mmalllog/mmall.log</File>
+        <!--<File>/developer/apache-tomcat-7.0.73/logs/mmall.log</File>-->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/developer/apache-tomcat-7.0.73/logs/mmall.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
+            <!--<fileNamePattern>/developer/apache-tomcat-7.0.73/logs/mmall.log.%d{yyyy-MM-dd}.gz</fileNamePattern>-->
+            <fileNamePattern>c:/fileRepo/mmalllog/mmall.log</fileNamePattern>
             <append>true</append>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
@@ -26,11 +27,11 @@
 
 
     <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <!--<File>d:/mmalllog/error.log</File>-->
-        <File>/developer/apache-tomcat-7.0.73/logs/error.log</File>
+        <File>c:/fileRepo/mmalllog/mmall.log</File>
+        <!--<File>/developer/apache-tomcat-7.0.73/logs/error.log</File>-->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>/devsoft/apache-tomcat-7.0.73/logs/error.log.%d{yyyy-MM-dd}.gz</fileNamePattern>
-            <!--<fileNamePattern>d:/mmalllog/error.log.%d{yyyy-MM-dd}.gz</fileNamePattern>-->
+            <!--<fileNamePattern>/devsoft/apache-tomcat-7.0.73/logs/error.log.%d{yyyy-MM-dd}.gz</fileNamePattern>-->
+            <fileNamePattern>c:/fileRepo/mmalllog/mmall.log</fileNamePattern>
             <append>true</append>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
@@ -46,7 +47,7 @@
     </appender>
 
     <!--additivity：不向上继承-->
-    <logger name="com.mmall" additivity="false" level="INFO" >
+    <logger name="org.mmall" additivity="false" level="INFO" >
         <appender-ref ref="mmall" />
         <appender-ref ref="console"/>
     </logger>
@@ -55,7 +56,7 @@
 
     <!-- mybatis log 日志 -->
     <!--（因为mybatis的sql日志级别为DEBUG）-->
-    <logger name="com.mmall.dao" level="DEBUG"/>
+    <logger name="org.mmall.dao" level="DEBUG"/>
 
     <!--<logger name="com.ibatis.sqlmap.engine.impl.SqlMapClientDelegate" level="DEBUG" >-->
         <!--<appender-ref ref="console"/>-->

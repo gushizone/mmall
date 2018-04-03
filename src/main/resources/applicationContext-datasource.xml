@@ -80,7 +80,7 @@
 
     <!-- mybatis自动生成dao接口实例 -->
     <bean name="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="com.mmall.dao"/>
+        <property name="basePackage" value="org.mmall.dao"/>
     </bean>
 
     <!-- 使用@Transactional进行声明式事务管理需要声明下面这行 -->
