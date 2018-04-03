@@ -4,16 +4,287 @@
   "nodes": [
     {
       "type": "Project",
-      "id": "98011b61-a011-4826-9cdc-69eee2aad1e5",
-      "lastModified": "2018-04-03T09:44:50.951+08:00",
+      "id": "2ead370c-0a72-4b25-8095-c5ea43361195",
+      "lastModified": "2018-04-03T15:27:55.042+08:00",
       "name": "mmall"
     },
     {
       "type": "Service",
-      "id": "708f771a-8bad-43a5-9af9-5ba243a0d129",
-      "lastModified": "2018-04-02T17:28:42.867+08:00",
+      "id": "cf00b7d9-1e99-4667-b0e6-2c2d2b902b9c",
+      "lastModified": "2018-04-03T15:07:43.588+08:00",
+      "name": "manage/category",
+      "parentId": "2ead370c-0a72-4b25-8095-c5ea43361195"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "categoryId",
+              "value": ""
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "parentId",
+              "value": "0"
+            },
+            {
+              "enabled": true,
+              "name": "categoryName",
+              "value": "新增的家用电器子分类"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/manage/category/add_category.do"
+      },
+      "id": "6b0899ec-d287-4dec-a66d-e934d57f526f",
+      "lastModified": "2018-04-03T15:19:00.347+08:00",
+      "name": "add_category.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "cf00b7d9-1e99-4667-b0e6-2c2d2b902b9c"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "categoryId",
+              "value": ""
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "categoryId",
+              "value": "0"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/manage/category/get_category.do"
+      },
+      "id": "c59a7810-4dc7-4aff-b004-36a30ba54fcd",
+      "lastModified": "2018-04-03T15:19:08.345+08:00",
+      "name": "get_category.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "cf00b7d9-1e99-4667-b0e6-2c2d2b902b9c"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "categoryId",
+              "value": ""
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "categoryId",
+              "value": "0"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/manage/category/get_deep_category.do"
+      },
+      "id": "c40d6742-7c76-4813-8db1-d3da6c48e84a",
+      "lastModified": "2018-04-03T15:27:55.042+08:00",
+      "name": "get_deep_category.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "cf00b7d9-1e99-4667-b0e6-2c2d2b902b9c"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "categoryId",
+              "value": ""
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "categoryId",
+              "value": "100031"
+            },
+            {
+              "enabled": true,
+              "name": "categoryName",
+              "value": "已修改的家用电器子分类"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/manage/category/set_category_name.do"
+      },
+      "id": "bc3440e9-7ee9-4e4f-b9de-173d25339309",
+      "lastModified": "2018-04-03T15:22:18.877+08:00",
+      "name": "set_category_name.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "cf00b7d9-1e99-4667-b0e6-2c2d2b902b9c"
+    },
+    {
+      "type": "Service",
+      "id": "f610b418-7a80-442d-93ad-2f8ac25cb0eb",
+      "lastModified": "2018-04-03T15:06:05.227+08:00",
+      "name": "manage/user",
+      "parentId": "2ead370c-0a72-4b25-8095-c5ea43361195"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "username",
+              "value": "geely"
+            },
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "password",
+              "value": "geely"
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/manage/user/login.do"
+      },
+      "id": "099ce621-5c6d-4073-8ae3-f1ac2accc599",
+      "lastModified": "2018-04-03T15:07:00.702+08:00",
+      "name": "login.do",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "f610b418-7a80-442d-93ad-2f8ac25cb0eb"
+    },
+    {
+      "type": "Service",
+      "id": "8f936a6d-8534-4b64-80d7-1965f7673e29",
+      "lastModified": "2018-04-03T09:55:08.113+08:00",
       "name": "user",
-      "parentId": "98011b61-a011-4826-9cdc-69eee2aad1e5"
+      "parentId": "2ead370c-0a72-4b25-8095-c5ea43361195"
     },
     {
       "type": "Request",
@@ -57,8 +328,8 @@
         "host": "localhost:8080",
         "path": "/user/check_valid.do"
       },
-      "id": "c7868e4b-8a41-4b13-93b5-9591314e6c0c",
-      "lastModified": "2018-04-03T09:00:51.755+08:00",
+      "id": "c79114f7-ae28-4dce-a192-0031bba7329b",
+      "lastModified": "2018-04-03T09:55:08.113+08:00",
       "name": "check_valid.do",
       "headers": [
         {
@@ -68,7 +339,7 @@
         }
       ],
       "metaInfo": {},
-      "parentId": "708f771a-8bad-43a5-9af9-5ba243a0d129"
+      "parentId": "8f936a6d-8534-4b64-80d7-1965f7673e29"
     },
     {
       "type": "Request",
@@ -118,8 +389,8 @@
         "host": "localhost:8080",
         "path": "/user/forget_check_answer.do"
       },
-      "id": "39de213e-ffb8-4bcb-a60c-2c791331c164",
-      "lastModified": "2018-04-03T09:14:29.223+08:00",
+      "id": "96572142-74f8-425a-a8ea-3d5ffe3e40c9",
+      "lastModified": "2018-04-03T09:55:08.113+08:00",
       "name": "forget_check_answer.do",
       "headers": [
         {
@@ -129,7 +400,7 @@
         }
       ],
       "metaInfo": {},
-      "parentId": "708f771a-8bad-43a5-9af9-5ba243a0d129"
+      "parentId": "8f936a6d-8534-4b64-80d7-1965f7673e29"
     },
     {
       "type": "Request",
@@ -167,8 +438,8 @@
         "host": "localhost:8080",
         "path": "/user/forget_get_question.do"
       },
-      "id": "456b1696-ec3d-4c08-8b56-cdf2af3e8076",
-      "lastModified": "2018-04-03T09:12:34.334+08:00",
+      "id": "52c82e6a-9ed5-4115-86b5-734294d39bf5",
+      "lastModified": "2018-04-03T09:55:08.113+08:00",
       "name": "forget_get_question.do",
       "headers": [
         {
@@ -178,7 +449,7 @@
         }
       ],
       "metaInfo": {},
-      "parentId": "708f771a-8bad-43a5-9af9-5ba243a0d129"
+      "parentId": "8f936a6d-8534-4b64-80d7-1965f7673e29"
     },
     {
       "type": "Request",
@@ -228,8 +499,8 @@
         "host": "localhost:8080",
         "path": "/user/forget_reset_password.do"
       },
-      "id": "b6916e2c-2efc-4ac7-97d6-b79e178609fb",
-      "lastModified": "2018-04-03T09:18:15.333+08:00",
+      "id": "9cc23350-bd5c-44e2-9be0-c2dab91d0c6b",
+      "lastModified": "2018-04-03T09:55:08.113+08:00",
       "name": "forget_reset_password.do",
       "headers": [
         {
@@ -239,7 +510,7 @@
         }
       ],
       "metaInfo": {},
-      "parentId": "708f771a-8bad-43a5-9af9-5ba243a0d129"
+      "parentId": "8f936a6d-8534-4b64-80d7-1965f7673e29"
     },
     {
       "type": "Request",
@@ -270,8 +541,8 @@
         "host": "localhost:8080",
         "path": "/user/get_information.do"
       },
-      "id": "d8da130b-f9e1-41bd-9ed9-dd13ae699d8c",
-      "lastModified": "2018-04-03T09:34:38.618+08:00",
+      "id": "033750ce-9a8d-4375-af2c-851c8e31c7b3",
+      "lastModified": "2018-04-03T09:55:08.113+08:00",
       "name": "get_information.do",
       "headers": [
         {
@@ -281,7 +552,7 @@
         }
       ],
       "metaInfo": {},
-      "parentId": "708f771a-8bad-43a5-9af9-5ba243a0d129"
+      "parentId": "8f936a6d-8534-4b64-80d7-1965f7673e29"
     },
     {
       "type": "Request",
@@ -312,8 +583,8 @@
         "host": "localhost:8080",
         "path": "/user/get_user_info.do"
       },
-      "id": "2c826322-ed28-4b44-a7b3-e1d801f4cda7",
-      "lastModified": "2018-04-03T09:03:10.539+08:00",
+      "id": "efb8004b-baa0-4da3-8dfe-b133d96d8ab3",
+      "lastModified": "2018-04-03T09:55:08.114+08:00",
       "name": "get_user_info.do",
       "headers": [
         {
@@ -323,7 +594,7 @@
         }
       ],
       "metaInfo": {},
-      "parentId": "708f771a-8bad-43a5-9af9-5ba243a0d129"
+      "parentId": "8f936a6d-8534-4b64-80d7-1965f7673e29"
     },
     {
       "type": "Request",
@@ -367,8 +638,8 @@
         "host": "localhost:8080",
         "path": "/user/login.do"
       },
-      "id": "9484cc10-d3de-41bf-a686-ea1b69004e61",
-      "lastModified": "2018-04-03T09:03:32.704+08:00",
+      "id": "fc4c2b5e-5cac-474e-bedf-20c16044fa13",
+      "lastModified": "2018-04-03T09:55:08.114+08:00",
       "name": "login.do",
       "headers": [
         {
@@ -378,7 +649,7 @@
         }
       ],
       "metaInfo": {},
-      "parentId": "708f771a-8bad-43a5-9af9-5ba243a0d129"
+      "parentId": "8f936a6d-8534-4b64-80d7-1965f7673e29"
     },
     {
       "type": "Request",
@@ -409,8 +680,8 @@
         "host": "localhost:8080",
         "path": "/user/logout.do"
       },
-      "id": "da74dad2-621f-4367-aea7-9414472cf66f",
-      "lastModified": "2018-04-03T09:41:22.539+08:00",
+      "id": "dc4a8ed2-c9f7-4bca-af3e-1bb34bbbda25",
+      "lastModified": "2018-04-03T09:55:08.114+08:00",
       "name": "logout.do",
       "headers": [
         {
@@ -420,62 +691,7 @@
         }
       ],
       "metaInfo": {},
-      "parentId": "708f771a-8bad-43a5-9af9-5ba243a0d129"
-    },
-    {
-      "type": "Request",
-      "method": {
-        "requestBody": true,
-        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
-        "name": "POST"
-      },
-      "body": {
-        "formBody": {
-          "overrideContentType": true,
-          "encoding": "application/x-www-form-urlencoded",
-          "items": [
-            {
-              "enabled": true,
-              "type": "Text",
-              "name": "username",
-              "value": "geely"
-            },
-            {
-              "enabled": true,
-              "type": "Text",
-              "name": "password",
-              "value": "geely"
-            }
-          ]
-        },
-        "bodyType": "Form",
-        "autoSetLength": true
-      },
-      "headersType": "Form",
-      "uri": {
-        "query": {
-          "delimiter": "&",
-          "items": []
-        },
-        "scheme": {
-          "name": "http",
-          "version": "V11"
-        },
-        "host": "localhost:8080",
-        "path": "/manage/user/login.do"
-      },
-      "id": "2c1b8bc4-8ede-436d-9c4e-9c046f4ed5c1",
-      "lastModified": "2018-04-03T09:44:50.951+08:00",
-      "name": "manage/login.do",
-      "headers": [
-        {
-          "enabled": true,
-          "name": "Content-Type",
-          "value": "application/x-www-form-urlencoded"
-        }
-      ],
-      "metaInfo": {},
-      "parentId": "708f771a-8bad-43a5-9af9-5ba243a0d129"
+      "parentId": "8f936a6d-8534-4b64-80d7-1965f7673e29"
     },
     {
       "type": "Request",
@@ -519,8 +735,8 @@
         "host": "localhost:8080",
         "path": "/user/register.do"
       },
-      "id": "f4e7232c-4041-4abf-90be-7c02fa297689",
-      "lastModified": "2018-04-02T17:30:44.792+08:00",
+      "id": "bac060e1-b02c-423b-8c00-78b2131f9a09",
+      "lastModified": "2018-04-03T09:55:08.114+08:00",
       "name": "register.do",
       "headers": [
         {
@@ -530,7 +746,7 @@
         }
       ],
       "metaInfo": {},
-      "parentId": "708f771a-8bad-43a5-9af9-5ba243a0d129"
+      "parentId": "8f936a6d-8534-4b64-80d7-1965f7673e29"
     },
     {
       "type": "Request",
@@ -574,8 +790,8 @@
         "host": "localhost:8080",
         "path": "/user/reset_password.do"
       },
-      "id": "9b82a752-4055-4d45-b734-ec9a2874a002",
-      "lastModified": "2018-04-03T09:19:48.048+08:00",
+      "id": "203dc7e3-650c-49ff-8ece-2f99a6dffc91",
+      "lastModified": "2018-04-03T09:55:08.114+08:00",
       "name": "reset_password.do",
       "headers": [
         {
@@ -585,7 +801,7 @@
         }
       ],
       "metaInfo": {},
-      "parentId": "708f771a-8bad-43a5-9af9-5ba243a0d129"
+      "parentId": "8f936a6d-8534-4b64-80d7-1965f7673e29"
     },
     {
       "type": "Request",
@@ -641,8 +857,8 @@
         "host": "localhost:8080",
         "path": "/user/update_information.do"
       },
-      "id": "c47a7cb4-8cfd-4a00-bbf2-360d435e878f",
-      "lastModified": "2018-04-03T09:28:27.701+08:00",
+      "id": "0e3bd88a-11e6-41cf-a74f-8f16e91b82ba",
+      "lastModified": "2018-04-03T09:55:08.114+08:00",
       "name": "update_information.do",
       "headers": [
         {
@@ -652,7 +868,7 @@
         }
       ],
       "metaInfo": {},
-      "parentId": "708f771a-8bad-43a5-9af9-5ba243a0d129"
+      "parentId": "8f936a6d-8534-4b64-80d7-1965f7673e29"
     }
   ]
 }
