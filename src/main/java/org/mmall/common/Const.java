@@ -16,8 +16,7 @@ public class Const {
     public static final String USERNAME = "username";
 
     /**
-     * Set提高效率//todo 时间复杂度
-     * 降序升序
+     * 产品：排序方式（Set提高效率//todo 时间复杂度：List Set）
      */
     public interface ProductListOrderBy{
         Set<String> PRICE_ASC_DESC = Sets.newHashSet("price_desc","price_asc");
@@ -32,19 +31,26 @@ public class Const {
         int ROLE_ADMIN = 1; //管理员
     }
 
+    /**
+     * 产品状态枚举
+     */
     public enum ProductStatusEnum{
         ON_SALE(1, "在线");
-        private String value;
+
         private int code;
+        private String value;
+
         ProductStatusEnum(int code, String value){
             this.code = code;
             this.value = value;
         }
-        public String getValue(){
-            return value;
-        }
+
         public int getCode(){
             return code;
+        }
+
+        public String getValue(){
+            return value;
         }
     }
 }

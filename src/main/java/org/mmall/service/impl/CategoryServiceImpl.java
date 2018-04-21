@@ -92,7 +92,7 @@ public class CategoryServiceImpl implements ICategoryService {
     }
 
     /**
-     * TODO 基于Java的递归查询算法，算出子节点
+     * TODO 基于Java的递归查询算法，算出子节及本身
      * @return Set<Category>：直接去重（重写equals和hashCode）
      */
     private Set<Category> findChildCategory(Set<Category> categorySet, Integer categoryId){

@@ -10,6 +10,7 @@ import java.util.Properties;
 
 /**
  * Created by geely
+ * 属性文件工具类
  */
 public class PropertiesUtil {
 
@@ -17,7 +18,7 @@ public class PropertiesUtil {
 
     private static Properties props;
 
-//    使用静态块，在tomcat启动时加载属性文件
+//    使用静态块，在tomcat启动时加载属性文件（优先级：静态块>普通代码块>构造代码块）
     static {
         String fileName = "mmall.properties";
         props = new Properties();
@@ -36,6 +37,7 @@ public class PropertiesUtil {
         return value.trim();
     }
 
+    /** 允许默认值 */
     public static String getProperty(String key,String defaultValue){
         String value = props.getProperty(key.trim());
         if(StringUtils.isBlank(value)){

@@ -60,9 +60,8 @@
 
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="mapperLocations" value="classpath*:mappers/*Mapper.xml"></property>
-
-        <!-- 分页插件 -->
+        <property name="mapperLocations" value="classpath*:mappers/*Mapper.xml" />
+        <!-- TODO 分页插件 -->
         <property name="plugins">
             <array>
                 <bean class="com.github.pagehelper.PageHelper">
@@ -75,7 +74,6 @@
                 </bean>
             </array>
         </property>
-
     </bean>
 
     <!-- mybatis自动生成dao接口实例 -->

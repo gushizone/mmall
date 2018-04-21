@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
  * Created by Apple on 2017/6/10.
  */
 @Controller
-@RequestMapping("/user/")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
