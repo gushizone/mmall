@@ -1,11 +1,11 @@
 {
-  "front-version": "2.17.1",
+  "front-version": "2.17.2",
   "version": 3,
   "nodes": [
     {
       "type": "Project",
       "id": "2ead370c-0a72-4b25-8095-c5ea43361195",
-      "lastModified": "2018-04-23T17:16:02.887+08:00",
+      "lastModified": "2018-04-23T22:32:12.610+08:00",
       "name": "mmall"
     },
     {
@@ -1165,6 +1165,317 @@
       "headers": [],
       "metaInfo": {},
       "parentId": "65feb0ab-1b7c-4617-88e6-a5bbf0abbbe1"
+    },
+    {
+      "type": "Service",
+      "id": "dfde1e47-2810-43aa-8732-07a51c1625d3",
+      "lastModified": "2018-04-23T22:10:28.337+08:00",
+      "name": "shipping",
+      "parentId": "2ead370c-0a72-4b25-8095-c5ea43361195"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "userId",
+              "value": "1"
+            },
+            {
+              "enabled": true,
+              "name": "receiverName",
+              "value": "geely"
+            },
+            {
+              "enabled": true,
+              "name": "receiverPhone",
+              "value": "010"
+            },
+            {
+              "enabled": true,
+              "name": "receiverMobile",
+              "value": "18688888888"
+            },
+            {
+              "enabled": true,
+              "name": "receiverProvince",
+              "value": "北京"
+            },
+            {
+              "enabled": true,
+              "name": "receiverCity",
+              "value": "北京市"
+            },
+            {
+              "enabled": true,
+              "name": "receiverAddress",
+              "value": "中关村"
+            },
+            {
+              "enabled": true,
+              "name": "receiverZip",
+              "value": "100000"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/shipping/add.do"
+      },
+      "id": "15afc40c-fc62-4cf8-aab6-2e02645a79c6",
+      "lastModified": "2018-04-23T22:17:39.332+08:00",
+      "name": "add.do",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "dfde1e47-2810-43aa-8732-07a51c1625d3"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "shippingId",
+              "value": "31"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/shipping/del.do"
+      },
+      "id": "462c3691-211d-4f76-b88c-d710739d4d54",
+      "lastModified": "2018-04-23T22:24:43.265+08:00",
+      "name": "del.do",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "dfde1e47-2810-43aa-8732-07a51c1625d3"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/shipping/list.do"
+      },
+      "id": "3093c1f6-fa1e-426b-ab9e-796af9c314c6",
+      "lastModified": "2018-04-23T22:32:12.610+08:00",
+      "name": "list.do",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "dfde1e47-2810-43aa-8732-07a51c1625d3"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "shippingId",
+              "value": "29"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/shipping/select.do"
+      },
+      "id": "b721c7ce-d5ec-4c42-9213-71f2825432d0",
+      "lastModified": "2018-04-23T22:31:00.520+08:00",
+      "name": "select.do",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "dfde1e47-2810-43aa-8732-07a51c1625d3"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": []
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "id",
+              "value": "29"
+            },
+            {
+              "enabled": true,
+              "name": "receiverName",
+              "value": "geely"
+            },
+            {
+              "enabled": true,
+              "name": "receiverPhone",
+              "value": "011"
+            },
+            {
+              "enabled": true,
+              "name": "receiverMobile",
+              "value": "18688888888"
+            },
+            {
+              "enabled": true,
+              "name": "receiverProvince",
+              "value": "北京"
+            },
+            {
+              "enabled": true,
+              "name": "receiverCity",
+              "value": "北京市"
+            },
+            {
+              "enabled": true,
+              "name": "receiverAddress",
+              "value": "中关村"
+            },
+            {
+              "enabled": true,
+              "name": "receiverZip",
+              "value": "100000"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/shipping/update.do"
+      },
+      "id": "8990da1b-557a-40f7-8764-79ed9742e0ea",
+      "lastModified": "2018-04-23T22:29:52.262+08:00",
+      "name": "update.do",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "dfde1e47-2810-43aa-8732-07a51c1625d3"
     },
     {
       "type": "Service",

@@ -2,6 +2,9 @@ package org.mmall.pojo;
 
 import java.util.Date;
 
+/**
+ * 收货地址详情
+ */
 public class Shipping {
     private Integer id;
 
