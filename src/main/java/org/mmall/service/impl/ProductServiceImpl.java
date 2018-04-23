@@ -122,7 +122,7 @@ public class ProductServiceImpl implements IProductService {
             productDetailVo.setParentCategoryId(category.getParentId());
         }
 
-//      对时间类型（毫秒数）进行格式化
+//      对时间类型（毫秒数）进行格式化（利用joda-time开源库）
 //        createTime
         productDetailVo.setCreateTime(DateTimeUtil.dateToStr(product.getCreateTime()));
 //        updateTime

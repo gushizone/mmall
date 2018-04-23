@@ -1,12 +1,491 @@
 {
-  "front-version": "2.16.1",
+  "front-version": "2.17.1",
   "version": 3,
   "nodes": [
     {
       "type": "Project",
       "id": "2ead370c-0a72-4b25-8095-c5ea43361195",
-      "lastModified": "2018-04-03T15:27:55.042+08:00",
+      "lastModified": "2018-04-23T17:16:02.887+08:00",
       "name": "mmall"
+    },
+    {
+      "type": "Service",
+      "id": "020efdbd-10c9-4b70-bf83-2d1c52fadd2e",
+      "lastModified": "2018-04-23T16:49:02.845+08:00",
+      "name": "cart",
+      "parentId": "2ead370c-0a72-4b25-8095-c5ea43361195"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "username",
+              "value": "admin"
+            },
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "password",
+              "value": "admin"
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "productId",
+              "value": "26"
+            },
+            {
+              "enabled": true,
+              "name": "count",
+              "value": "2"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/cart/add.do"
+      },
+      "id": "9a063824-8cc6-4e63-a704-9bad80944380",
+      "lastModified": "2018-04-23T17:04:32.836+08:00",
+      "name": "add.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "020efdbd-10c9-4b70-bf83-2d1c52fadd2e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "username",
+              "value": "admin"
+            },
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "password",
+              "value": "admin"
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "productIds",
+              "value": "27"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/cart/delete_product.do"
+      },
+      "id": "a33fa137-4aa8-4147-b65c-2c1ca518ec54",
+      "lastModified": "2018-04-23T17:12:02.774+08:00",
+      "name": "delete_product.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "020efdbd-10c9-4b70-bf83-2d1c52fadd2e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "username",
+              "value": "admin"
+            },
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "password",
+              "value": "admin"
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/cart/get_cart_product_count.do"
+      },
+      "id": "2ff6659b-6e3c-4e55-b62f-83dc5f20978c",
+      "lastModified": "2018-04-23T17:14:58.777+08:00",
+      "name": "get_cart_product_count.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "020efdbd-10c9-4b70-bf83-2d1c52fadd2e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "username",
+              "value": "admin"
+            },
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "password",
+              "value": "admin"
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/cart/list.do"
+      },
+      "id": "91db2c34-76b4-4219-83f2-8861c86b09cd",
+      "lastModified": "2018-04-23T16:56:14.075+08:00",
+      "name": "list.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "020efdbd-10c9-4b70-bf83-2d1c52fadd2e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "username",
+              "value": "admin"
+            },
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "password",
+              "value": "admin"
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "productId",
+              "value": "26"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/cart/select.do"
+      },
+      "id": "c1a9fab7-c31d-42c5-8f17-1fe0b65d4600",
+      "lastModified": "2018-04-23T17:14:11.531+08:00",
+      "name": "select.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "020efdbd-10c9-4b70-bf83-2d1c52fadd2e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "username",
+              "value": "admin"
+            },
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "password",
+              "value": "admin"
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/cart/select_all.do"
+      },
+      "id": "c23c251d-d38e-4cf8-a3ad-e5c9806603dd",
+      "lastModified": "2018-04-23T17:16:02.887+08:00",
+      "name": "select_all.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "020efdbd-10c9-4b70-bf83-2d1c52fadd2e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "username",
+              "value": "admin"
+            },
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "password",
+              "value": "admin"
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "productId",
+              "value": "26"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/cart/un_select.do"
+      },
+      "id": "0da20066-39c1-431e-bd2a-753df8fa95af",
+      "lastModified": "2018-04-23T17:13:46.081+08:00",
+      "name": "un_select.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "020efdbd-10c9-4b70-bf83-2d1c52fadd2e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "username",
+              "value": "admin"
+            },
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "password",
+              "value": "admin"
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/cart/un_select_all.do"
+      },
+      "id": "1f9b1e11-1d62-4e95-98f7-cc66a840217b",
+      "lastModified": "2018-04-23T17:15:50.976+08:00",
+      "name": "un_select_all.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "020efdbd-10c9-4b70-bf83-2d1c52fadd2e"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "username",
+              "value": "admin"
+            },
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "password",
+              "value": "admin"
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "productId",
+              "value": "27"
+            },
+            {
+              "enabled": true,
+              "name": "count",
+              "value": "2"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/cart/update.do"
+      },
+      "id": "8dd5a80e-e483-4348-8422-134043f41092",
+      "lastModified": "2018-04-23T17:08:13.611+08:00",
+      "name": "update.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "020efdbd-10c9-4b70-bf83-2d1c52fadd2e"
     },
     {
       "type": "Service",
@@ -219,6 +698,306 @@
     },
     {
       "type": "Service",
+      "id": "0e7cbd02-87d3-4743-926d-86ae00d11378",
+      "lastModified": "2018-04-04T15:19:47.120+08:00",
+      "name": "manage/product",
+      "parentId": "2ead370c-0a72-4b25-8095-c5ea43361195"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "productId",
+              "value": "27"
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/manage/product/detail.do"
+      },
+      "id": "907866d1-b63a-432e-a857-fd98f6c40987",
+      "lastModified": "2018-04-21T13:59:48.598+08:00",
+      "name": "detail.do",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "0e7cbd02-87d3-4743-926d-86ae00d11378"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "categoryId",
+              "value": ""
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/manage/product/list.do"
+      },
+      "id": "c806836f-ca9e-4898-8cde-f9b923502ef2",
+      "lastModified": "2018-04-04T15:19:36.873+08:00",
+      "name": "list.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "0e7cbd02-87d3-4743-926d-86ae00d11378"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "type": "Text",
+              "name": "productName",
+              "value": "美的"
+            },
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "productId",
+              "value": "27"
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "categoryId",
+              "value": "1"
+            },
+            {
+              "enabled": true,
+              "name": "name",
+              "value": "三星洗衣机"
+            },
+            {
+              "enabled": true,
+              "name": "subtitle",
+              "value": "三星大促销"
+            },
+            {
+              "enabled": true,
+              "name": "subImages",
+              "value": "test.jpg"
+            },
+            {
+              "enabled": true,
+              "name": "detail",
+              "value": "detailtext"
+            },
+            {
+              "enabled": true,
+              "name": "price",
+              "value": "1000"
+            },
+            {
+              "enabled": true,
+              "name": "stock",
+              "value": "100"
+            },
+            {
+              "enabled": true,
+              "name": "status",
+              "value": "1"
+            },
+            {
+              "enabled": true,
+              "name": "id",
+              "value": "30"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/manage/product/save.do"
+      },
+      "id": "765490ba-8576-4a31-969d-ee3e69bb7f52",
+      "lastModified": "2018-04-21T14:20:29.490+08:00",
+      "name": "save.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "0e7cbd02-87d3-4743-926d-86ae00d11378"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "type": "Text",
+              "name": "productName",
+              "value": "美的"
+            },
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "productId",
+              "value": "27"
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/manage/product/search.do"
+      },
+      "id": "cce3cb00-04b4-4d2d-8919-ad2f1c0269bf",
+      "lastModified": "2018-04-04T15:49:10.700+08:00",
+      "name": "search.do",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "0e7cbd02-87d3-4743-926d-86ae00d11378"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "requestBody": true,
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+        "name": "POST"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "productId",
+              "value": "27"
+            },
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "status",
+              "value": "2"
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": []
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/manage/product/set_sale_status.do"
+      },
+      "id": "83916ab2-c818-40af-b74b-d7fef0e990c1",
+      "lastModified": "2018-04-21T14:02:39.467+08:00",
+      "name": "set_sale_status.do",
+      "headers": [
+        {
+          "enabled": true,
+          "name": "Content-Type",
+          "value": "application/x-www-form-urlencoded"
+        }
+      ],
+      "metaInfo": {},
+      "parentId": "0e7cbd02-87d3-4743-926d-86ae00d11378"
+    },
+    {
+      "type": "Service",
       "id": "f610b418-7a80-442d-93ad-2f8ac25cb0eb",
       "lastModified": "2018-04-03T15:06:05.227+08:00",
       "name": "manage/user",
@@ -240,13 +1019,13 @@
               "enabled": true,
               "type": "Text",
               "name": "username",
-              "value": "geely"
+              "value": "admin"
             },
             {
               "enabled": true,
               "type": "Text",
               "name": "password",
-              "value": "geely"
+              "value": "admin"
             }
           ]
         },
@@ -267,7 +1046,7 @@
         "path": "/manage/user/login.do"
       },
       "id": "099ce621-5c6d-4073-8ae3-f1ac2accc599",
-      "lastModified": "2018-04-03T15:07:00.702+08:00",
+      "lastModified": "2018-04-04T15:27:27.173+08:00",
       "name": "login.do",
       "headers": [
         {
@@ -278,6 +1057,114 @@
       ],
       "metaInfo": {},
       "parentId": "f610b418-7a80-442d-93ad-2f8ac25cb0eb"
+    },
+    {
+      "type": "Service",
+      "id": "65feb0ab-1b7c-4617-88e6-a5bbf0abbbe1",
+      "lastModified": "2018-04-21T14:24:39.956+08:00",
+      "name": "product",
+      "parentId": "2ead370c-0a72-4b25-8095-c5ea43361195"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "categoryId",
+              "value": ""
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "productId",
+              "value": "26"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/product/detail.do"
+      },
+      "id": "91267eec-dd6d-479d-8c69-1abc6de276df",
+      "lastModified": "2018-04-21T14:34:16.121+08:00",
+      "name": "detail.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "65feb0ab-1b7c-4617-88e6-a5bbf0abbbe1"
+    },
+    {
+      "type": "Request",
+      "method": {
+        "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+        "name": "GET"
+      },
+      "body": {
+        "formBody": {
+          "overrideContentType": true,
+          "encoding": "application/x-www-form-urlencoded",
+          "items": [
+            {
+              "enabled": true,
+              "type": "Text",
+              "name": "categoryId",
+              "value": ""
+            }
+          ]
+        },
+        "bodyType": "Form",
+        "autoSetLength": true
+      },
+      "headersType": "Form",
+      "uri": {
+        "query": {
+          "delimiter": "&",
+          "items": [
+            {
+              "enabled": true,
+              "name": "keyword",
+              "value": "i"
+            },
+            {
+              "enabled": true,
+              "name": "orderBy",
+              "value": "price_asc"
+            }
+          ]
+        },
+        "scheme": {
+          "name": "http",
+          "version": "V11"
+        },
+        "host": "localhost:8080",
+        "path": "/product/list.do"
+      },
+      "id": "97e6c320-3e7c-4ba7-bafa-d3f83ce2b426",
+      "lastModified": "2018-04-21T14:30:36.534+08:00",
+      "name": "list.do",
+      "headers": [],
+      "metaInfo": {},
+      "parentId": "65feb0ab-1b7c-4617-88e6-a5bbf0abbbe1"
     },
     {
       "type": "Service",

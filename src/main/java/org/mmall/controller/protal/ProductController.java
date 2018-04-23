@@ -28,7 +28,10 @@ public class ProductController {
         return iProductService.getProductDetail(productId);
     }
 
-    /** 获取产品列表 （搜索，允许关键字/分类为空） */
+    /**
+     * 产品搜索
+     * 获取产品列表 （搜索，允许关键字/分类为空）
+     */
     @RequestMapping("list.do")
     @ResponseBody
     public ServerResponse<PageInfo> list(@RequestParam(value = "keyword", required = false) String keyword,

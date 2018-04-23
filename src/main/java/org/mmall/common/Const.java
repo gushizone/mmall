@@ -22,13 +22,20 @@ public class Const {
         Set<String> PRICE_ASC_DESC = Sets.newHashSet("price_desc","price_asc");
     }
 
-    /**
-     * 使用内部接口类分组常量
-     * 比枚举轻量
-     */
+    /** 使用内部接口类分组常量 比枚举轻量*/
+
+    /** 角色 */
     public interface Role{
         int ROLE_CUSTOMER = 0; //普通用户
         int ROLE_ADMIN = 1; //管理员
+    }
+    /** 购物车 */
+    public interface Cart{
+        int CHECKED = 1; //选中状态
+        int UN_CHECKED = 0; // 未选中状态
+
+        String LIMIT_NUM_FAIL = "LIMIT_NUM_FAIL";// 库存不满足需求
+        String LIMIT_NUM_SUCCESS = "LIMIT_NUM_SUCCESS"; // 库存满足需求
     }
 
     /**
