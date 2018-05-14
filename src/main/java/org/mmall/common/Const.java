@@ -22,7 +22,7 @@ public class Const {
         Set<String> PRICE_ASC_DESC = Sets.newHashSet("price_desc","price_asc");
     }
 
-    /** 使用内部接口类分组常量 比枚举轻量*/
+    // TODO 使用内部接口类分组常量 比枚举轻量
 
     /** 角色 */
     public interface Role{
@@ -60,4 +60,87 @@ public class Const {
             return value;
         }
     }
+
+    /** 订单状态 */
+    public enum OrderStatusEnum{
+        CANCELED(0, "已取消"),
+        NO_PAY(10, "未支付"),
+        PAID(20, "已付款"),
+        SHIPPED(40, "已发货"),
+        ORDER_SUCCESS(50, "订单完成"),
+        ORDER_CLOSE(60, "订单关闭");
+
+
+        OrderStatusEnum(int code, String value) {
+            this.code = code;
+            this.value = value;
+        }
+
+        private int code;
+        private String value;
+
+        public int getCode() {
+            return code;
+        }
+
+        public void setCode(int code) {
+            this.code = code;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
+
+    /**
+     * 支付宝回调
+     * https://docs.open.alipay.com/194/103296
+     * 反馈success给支付宝，支付宝会不再异步通知
+     */
+    public interface AlipayCallback{
+        String TRADE_STATUS_WAIT_BUYER_PAY = "WAIT_BUYER_PAY"; // 交易创建，等待买家付款
+        String TRADE_STATUS_TRADE_SUCCESS = "TRADE_SUCCESS"; // 交易支付成功
+
+        String RESPONSE_SUCCESS = "success"; //响应：成功
+        String RESPONSE_FAILED = "failed"; // 响应：失败
+    }
+
+    /** 支付平台 */
+    public enum PayPlatformEnum{
+        ALIPAY(1, "支付宝");
+
+        PayPlatformEnum(int code, String value) {
+            this.code = code;
+            this.value = value;
+        }
+
+        private int code;
+        private String value;
+
+        public int getCode() {
+            return code;
+        }
+
+        public void setCode(int code) {
+            this.code = code;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
+
+
+
+
+
+
 }

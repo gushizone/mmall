@@ -95,6 +95,6 @@ public class ServerResponse<T> implements Serializable {
      * 开放自定义的错误反馈
      */
     public static <T> ServerResponse<T> createByErrorCodeMessage(int errorCode, String errorMessage){
-        return new ServerResponse<T>(errorCode,errorMessage);
+        return new ServerResponse<T>(errorCode, errorMessage);
     }
 }

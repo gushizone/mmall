@@ -1,6 +1,9 @@
 package org.mmall.dao;
 
+import org.apache.ibatis.annotations.Param;
 import org.mmall.pojo.OrderItem;
+
+import java.util.List;
 
 public interface OrderItemMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +17,7 @@ public interface OrderItemMapper {
     int updateByPrimaryKeySelective(OrderItem record);
 
     int updateByPrimaryKey(OrderItem record);
+
+    /** 获取订单项，通过订单号和用户id */
+    List<OrderItem> getByOrderNoUserId(@Param("orderNo") Long orderNo, @Param("userId") Integer userId);
 }
