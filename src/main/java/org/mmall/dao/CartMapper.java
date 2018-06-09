@@ -35,4 +35,7 @@ public interface CartMapper {
 
     /** 获取购物车内商品总数 */
     int selectCartProductCount(Integer userId);
+
+    /** 通过用户id，获取购物车已勾选商品列表 */
+    List<Cart> selectCheckedCartByUserId(Integer userId);
 }

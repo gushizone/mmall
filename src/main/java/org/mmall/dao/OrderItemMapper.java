@@ -20,4 +20,10 @@ public interface OrderItemMapper {
 
     /** 获取订单项，通过订单号和用户id */
     List<OrderItem> getByOrderNoUserId(@Param("orderNo") Long orderNo, @Param("userId") Integer userId);
+
+    /** 获取订单项，通过订单号 */
+    List<OrderItem> getByOrderNo(Long orderNo);
+
+    /** 批量插入(TODO 一定要@Param，否则无法识别) */
+    void batchInsert(@Param("orderItemList") List<OrderItem> orderItemList);
 }
