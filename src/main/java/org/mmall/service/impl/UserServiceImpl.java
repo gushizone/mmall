@@ -1,13 +1,13 @@
 package org.mmall.service.impl;
 
+import org.apache.commons.lang3.StringUtils;
 import org.mmall.common.Const;
 import org.mmall.common.ServerResponse;
-import org.mmall.common.TokenCache;
 import org.mmall.dao.UserMapper;
 import org.mmall.pojo.User;
 import org.mmall.service.IUserService;
 import org.mmall.util.MD5Util;
-import org.apache.commons.lang3.StringUtils;
+import org.mmall.util.RedisPoolUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -109,6 +109,8 @@ public class UserServiceImpl implements IUserService {
 
     /**
      * 忘记密码2：检查密保问题答案（TODO 会生成随机token，防止越权）
+     *
+     * 获得一个不重复字符串标志（重复概率极小，几乎可以忽略）
      * @param username
      * @param question
      * @param answer
@@ -118,11 +120,10 @@ public class UserServiceImpl implements IUserService {
     public ServerResponse<String> forgetCheckAnswer(String username, String question, String answer) {
         int resultCount = userMapper.checkAnswer(username,question,answer);
         if(resultCount > 0){
-//            说明问题及问题答案是这个用户的，并且正确
-//            获得一个不重复字符串标志（重复概率极小，几乎可以忽略）
+            // 忘记密码 token
             String forgetToken = UUID.randomUUID().toString();
-//            放入本地缓存
-            TokenCache.setKey(TokenCache.TOKEN_PREFIX + username, forgetToken);
+            // 存入 redis，有效期 12h
+            RedisPoolUtil.setEx(Const.TOKEN_PREFIX + username, forgetToken, 60*60*12);
             return ServerResponse.createBySuccess(forgetToken);
         }
         return ServerResponse.createByErrorMessage("问题答案错误");
@@ -140,7 +141,7 @@ public class UserServiceImpl implements IUserService {
             return ServerResponse.createByErrorMessage("用户不存在");
         }
 
-        String token = TokenCache.getKey(TokenCache.TOKEN_PREFIX + username);
+        String token = RedisPoolUtil.get(Const.TOKEN_PREFIX + username);
         if(StringUtils.isBlank(token)){
             return ServerResponse.createByErrorMessage("token无效或者过期");
         }
