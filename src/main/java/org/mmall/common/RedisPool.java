@@ -10,6 +10,7 @@ import redis.clients.jedis.JedisPoolConfig;
  *
  * 对redis连接池进行封装 - jedis
  */
+@Deprecated
 public class RedisPool {
     //jedis连接池
     private static JedisPool pool;

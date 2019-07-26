@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
-       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/mvc
 	http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="org.mmall" annotation-config="true"/>
+    <!-- 关闭默认扫描，只扫描 Controller -->
+    <context:component-scan base-package="org.mmall.controller" annotation-config="true" use-default-filters="false">
+        <!-- 只扫描 Controller -->
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan>
 
     <mvc:annotation-driven>
         <mvc:message-converters>
@@ -42,6 +46,25 @@
         <!-- 编码 -->
         <property name="defaultEncoding" value="UTF-8" />
     </bean>
+
+
+    <mvc:interceptors>
+        <!-- 直接定义在interceptors下的bean会拦截所有请求 -->
+        <!--<bean></bean>-->
+
+        <mvc:interceptor>
+            <!--
+                /** : 当前路径及子路径
+                /* : 当前路径，不含子路径
+                / : web 项目根目录请求
+             -->
+            <mvc:mapping path="/manage/**"/>
+            <!-- 放行登录，防止死循环 -->
+            <!--<mvc:exclude-mapping path="/user/login.do"/>-->
+            <mvc:exclude-mapping path="/manage/user/login.do"/>
+            <bean class="org.mmall.controller.common.interceptor.AuthorityInterceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 
 </beans>

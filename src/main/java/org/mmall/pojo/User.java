@@ -1,8 +1,12 @@
 package org.mmall.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+/**
+ * FIXME SpringSession 序列化时要求 Serializable (不使用会出错，但控制台不报错, tomcat 的报错没复现)
+ */
+public class User implements Serializable {
     private Integer id;
 
     private String username;

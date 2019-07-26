@@ -12,7 +12,7 @@ import org.mmall.pojo.User;
 import org.mmall.service.ICartService;
 import org.mmall.util.CookieUtil;
 import org.mmall.util.JsonUtil;
-import org.mmall.util.RedisPoolUtil;
+import org.mmall.util.RedisShardedPoolUtil;
 import org.mmall.vo.CartVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,7 +43,7 @@ public class CartController {
             return ServerResponse.createByErrorMessage("用户未登录，无法获得当前用户的信息");
         }
         // 从 redis 中获取 用户信息
-        String userJsonStr = RedisPoolUtil.get(loginToken);
+        String userJsonStr = RedisShardedPoolUtil.get(loginToken);
         User user = JsonUtil.string2Obj(userJsonStr, User.class);
 
         if(user == null){
@@ -62,7 +62,7 @@ public class CartController {
             return ServerResponse.createByErrorMessage("用户未登录，无法获得当前用户的信息");
         }
         // 从 redis 中获取 用户信息
-        String userJsonStr = RedisPoolUtil.get(loginToken);
+        String userJsonStr = RedisShardedPoolUtil.get(loginToken);
         User user = JsonUtil.string2Obj(userJsonStr, User.class);
 
         if(user == null){
@@ -81,7 +81,7 @@ public class CartController {
             return ServerResponse.createByErrorMessage("用户未登录，无法获得当前用户的信息");
         }
         // 从 redis 中获取 用户信息
-        String userJsonStr = RedisPoolUtil.get(loginToken);
+        String userJsonStr = RedisShardedPoolUtil.get(loginToken);
         User user = JsonUtil.string2Obj(userJsonStr, User.class);
 
         if(user == null){
@@ -100,7 +100,7 @@ public class CartController {
             return ServerResponse.createByErrorMessage("用户未登录，无法获得当前用户的信息");
         }
         // 从 redis 中获取 用户信息
-        String userJsonStr = RedisPoolUtil.get(loginToken);
+        String userJsonStr = RedisShardedPoolUtil.get(loginToken);
         User user = JsonUtil.string2Obj(userJsonStr, User.class);
 
         if(user == null){
@@ -119,7 +119,7 @@ public class CartController {
             return ServerResponse.createByErrorMessage("用户未登录，无法获得当前用户的信息");
         }
         // 从 redis 中获取 用户信息
-        String userJsonStr = RedisPoolUtil.get(loginToken);
+        String userJsonStr = RedisShardedPoolUtil.get(loginToken);
         User user = JsonUtil.string2Obj(userJsonStr, User.class);
 
         if(user == null){
@@ -138,7 +138,7 @@ public class CartController {
             return ServerResponse.createByErrorMessage("用户未登录，无法获得当前用户的信息");
         }
         // 从 redis 中获取 用户信息
-        String userJsonStr = RedisPoolUtil.get(loginToken);
+        String userJsonStr = RedisShardedPoolUtil.get(loginToken);
         User user = JsonUtil.string2Obj(userJsonStr, User.class);
 
         if(user == null){
@@ -157,7 +157,7 @@ public class CartController {
             return ServerResponse.createByErrorMessage("用户未登录，无法获得当前用户的信息");
         }
         // 从 redis 中获取 用户信息
-        String userJsonStr = RedisPoolUtil.get(loginToken);
+        String userJsonStr = RedisShardedPoolUtil.get(loginToken);
         User user = JsonUtil.string2Obj(userJsonStr, User.class);
 
         if(user == null){
@@ -176,7 +176,7 @@ public class CartController {
             return ServerResponse.createByErrorMessage("用户未登录，无法获得当前用户的信息");
         }
         // 从 redis 中获取 用户信息
-        String userJsonStr = RedisPoolUtil.get(loginToken);
+        String userJsonStr = RedisShardedPoolUtil.get(loginToken);
         User user = JsonUtil.string2Obj(userJsonStr, User.class);
 
         if(user == null){
@@ -195,7 +195,7 @@ public class CartController {
             return ServerResponse.createByErrorMessage("用户未登录，无法获得当前用户的信息");
         }
         // 从 redis 中获取 用户信息
-        String userJsonStr = RedisPoolUtil.get(loginToken);
+        String userJsonStr = RedisShardedPoolUtil.get(loginToken);
         User user = JsonUtil.string2Obj(userJsonStr, User.class);
 
         if(user == null){

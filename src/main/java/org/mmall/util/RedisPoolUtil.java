@@ -10,6 +10,7 @@ import redis.clients.jedis.Jedis;
  * 封装 redis 常用操作
  */
 @Slf4j
+@Deprecated
 public class RedisPoolUtil {
 
 
