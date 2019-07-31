@@ -10,8 +10,12 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * Guava缓存通用类
+ *
+ * FIXME 当前系统已不使用
+ *
  * 详情参考：https://github.com/google/guava/wiki/CachesExplained
  */
+@Deprecated
 public class TokenCache {
 
     private static Logger logger = LoggerFactory.getLogger(TokenCache.class);

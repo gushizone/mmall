@@ -215,15 +215,16 @@ public class ProductServiceImpl implements IProductService {
         List<Integer> categoryIdList = new ArrayList<Integer>();
         if(categoryId != null){
             Category category = categoryMapper.selectByPrimaryKey(categoryId);
-            // TODO 没有查到该分组且关键字为空，就返回一个空的结果集（依然需要分页），不报错
+            // 没有查到该分组且关键字为空，就返回一个空的结果集（依然需要分页），不报错
             if(category == null && StringUtils.isBlank(keyword)){
                 PageHelper.startPage(pageNum, pageSize);
                 List<ProductListVo> productListVOList = Lists.newArrayList();
-                PageInfo pageInfo = new PageInfo(productListVOList);//  TODO 如果集合没有变化，直接返回即可
+                PageInfo pageInfo = new PageInfo(productListVOList);//  如果集合没有变化，直接返回即可
                 return  ServerResponse.createBySuccess(pageInfo);
             }
             categoryIdList = iCategoryService.selectCategoryAndChildrenById(category.getId()).getData();//获取所以子节点及本身
         }
+        // 模糊查询
         if(StringUtils.isNotBlank(keyword)){
             keyword = new StringBuilder().append("%").append(keyword).append("%").toString();
         }
@@ -232,11 +233,11 @@ public class ProductServiceImpl implements IProductService {
         if(StringUtils.isNotBlank(orderBy)){
             if(Const.ProductListOrderBy.PRICE_ASC_DESC.contains(orderBy)){
                 String[] orderByArray = orderBy.split("_");
-                //TODO 使用PageHelper的排序（参数要求：price desc）
+                // 使用PageHelper的排序（参数要求：price desc）
                 PageHelper.orderBy(orderByArray[0] +" "+ orderByArray[1]);
             }
         }
-//        TODO 因为Mybatis中是判断是不是null,之前由对categoryIdList进行了空赋值，所以避免不当查询需要进行归null处理
+//        因为Mybatis中是判断是不是null,之前由对categoryIdList进行了空赋值，所以避免不当查询需要进行归null处理
         List<Product> productList = productMapper.selectByNameAndCategoryIds(StringUtils.isBlank(keyword)?null:keyword, categoryIdList.size()==0?null:categoryIdList);
 
         List<ProductListVo> productListVOList = Lists.newArrayList();

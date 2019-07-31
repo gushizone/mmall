@@ -29,4 +29,10 @@ public interface OrderMapper {
 
     /** 查询所有订单 */
     List<Order> selectAllOrder();
+
+    /** 查询订单状态 **/
+    List<Order> selectOrderStatusByCreateTime(@Param("status") Integer status,@Param("date") String date);
+
+    /** 关闭订单 **/
+    int closeOrderByOrderId(Integer id);
 }

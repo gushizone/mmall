@@ -70,7 +70,8 @@ public class FTPUtil {
                 ftpClient.enterLocalPassiveMode();//    TODO 打开本地被动模式（和ftp统一）
                 for(File fileItem : fileList){
                     fis = new FileInputStream(fileItem);
-                    ftpClient.storeFile(fileItem.getName(), fis);// 存储文件
+                    boolean flag = ftpClient.storeFile(fileItem.getName(), fis);// 存储文件
+                    logger.info("上传文件状态", flag);
                 }
             }catch (IOException e){
                 logger.error("上传文件异常", e);

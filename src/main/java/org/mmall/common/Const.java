@@ -15,6 +15,12 @@ public class Const {
     public static final String EMAIL = "email";
     public static final String USERNAME = "username";
 
+    public static final String TOKEN_PREFIX = "token_";
+
+    public interface RedisCacheExtime {
+        int REDIS_SESSION_EXTIME = 60 * 30; // session超时时间 （30min）
+    }
+
     /**
      * 产品：排序方式（Set提高效率//todo 时间复杂度：List Set）
      */
@@ -95,8 +101,6 @@ public class Const {
             this.value = value;
         }
 
-
-//        TODO enum
         public static OrderStatusEnum codeOf(int code){
             for (OrderStatusEnum orderStatusEnum : values()) {
                 if(orderStatusEnum.getCode() == code){
@@ -189,7 +193,13 @@ public class Const {
         }
     }
 
-
+    /**
+     * redis分布式锁
+     */
+    public interface  REDIS_LOCK{
+        //关闭订单的分布式锁
+        String CLOSE_ORDER_TASK_LOCK = "CLOSE_ORDER_TASK_LOCK";
+    }
 
 
 }
