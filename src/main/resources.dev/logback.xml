@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- TODO echo CATALINA_HOME -->
+        <!--<proerty name="LOG_HOME" value="${CATALINA_HOME}/logs" />-->
+
         <encoding>UTF-8</encoding>
         <encoder>
             <pattern>[%d{HH:mm:ss.SSS}][%p][%c{40}][%t] %m%n</pattern>
@@ -50,6 +53,7 @@
     <logger name="org.mmall" additivity="false" level="INFO" >
         <appender-ref ref="mmall" />
         <appender-ref ref="console"/>
+        <appender-ref ref="error"/>
     </logger>
 
 

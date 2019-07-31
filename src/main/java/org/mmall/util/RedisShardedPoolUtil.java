@@ -13,9 +13,9 @@ import redis.clients.jedis.ShardedJedis;
 public class RedisShardedPoolUtil {
 
     /**
-     * 设置key的有效期，单位是秒
+     * 设置key的有效期
      * @param key
-     * @param exTime
+     * @param exTime 单位(s)
      * @return
      */
     public static Long expire(String key,int exTime){
@@ -33,7 +33,13 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
-    //exTime的单位是秒
+    /**
+     * 设置 key，并设置有效期
+     * @param key
+     * @param value
+     * @param exTime 单位(s)
+     * @return
+     */
     public static String setEx(String key,String value,int exTime){
         ShardedJedis jedis = null;
         String result = null;
@@ -49,6 +55,12 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
+    /**
+     * 设置 key
+     * @param key
+     * @param value
+     * @return
+     */
     public static String set(String key,String value){
         ShardedJedis jedis = null;
         String result = null;
@@ -65,6 +77,12 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
+    /**
+     * 获取并设置key，具有原子性
+     * @param key
+     * @param value
+     * @return
+     */
     public static String getSet(String key,String value){
         ShardedJedis jedis = null;
         String result = null;
@@ -81,6 +99,11 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
+    /**
+     * 获取 key
+     * @param key
+     * @return
+     */
     public static String get(String key){
         ShardedJedis jedis = null;
         String result = null;
@@ -96,6 +119,11 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
+    /**
+     * 删除 key
+     * @param key
+     * @return
+     */
     public static Long del(String key){
         ShardedJedis jedis = null;
         Long result = null;
@@ -111,6 +139,12 @@ public class RedisShardedPoolUtil {
         return result;
     }
 
+    /**
+     * 设置 key（如果 key 不存在），具有原子性
+     * @param key
+     * @param value
+     * @return
+     */
     public static Long setnx(String key,String value){
         ShardedJedis jedis = null;
         Long result = null;

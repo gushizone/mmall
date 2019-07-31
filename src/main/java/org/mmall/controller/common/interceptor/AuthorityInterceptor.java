@@ -23,7 +23,7 @@ import java.util.Map;
 /**
  * 权限认证拦截器
  *
- * TODO 展示只演示管理员操作
+ * TODO 目前只认证管理员 : 只有用户登录且拥有管理员权限才能访问[/manage/**]。
  */
 @Slf4j
 public class AuthorityInterceptor implements HandlerInterceptor{
@@ -82,7 +82,7 @@ public class AuthorityInterceptor implements HandlerInterceptor{
             if(user == null){ // 未登录
                 if(StringUtils.equals(className,"ProductManageController")
                         && StringUtils.equals(methodName,"richtextImgUpload")){
-                    Map resultMap = Maps.newHashMap();
+                    Map<String, Object> resultMap = Maps.newHashMap();
                     resultMap.put("success",false);
                     resultMap.put("msg","请登录管理员");
                     out.print(JsonUtil.obj2String(resultMap));
@@ -92,7 +92,7 @@ public class AuthorityInterceptor implements HandlerInterceptor{
             }else{ // 非管理员
                 if(StringUtils.equals(className,"ProductManageController")
                         && StringUtils.equals(methodName,"richtextImgUpload")){
-                    Map resultMap = Maps.newHashMap();
+                    Map<String, Object> resultMap = Maps.newHashMap();
                     resultMap.put("success",false);
                     resultMap.put("msg","无权限操作");
                     out.print(JsonUtil.obj2String(resultMap));
